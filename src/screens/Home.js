@@ -145,7 +145,16 @@ export default function Home({ onLayout }) {
                 {moonPhaseName}
               </Text>
 
+              <View style={styles.box}>
+                  
+              </View>
 
+              {/* <BlurView
+        style={styles.absolute}
+        blurType="light"
+        blurAmount={10}
+        reducedTransparencyFallbackColor="white"
+      /> */}
           </>
       }
 
