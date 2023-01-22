@@ -5,10 +5,9 @@
 
 // importing libraries
 import { useEffect, useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import * as Location from 'expo-location';
 import { BlurView, VibrancyView } from "@react-native-community/blur";
-import { Text, View, Animated, ActivityIndicator } from 'react-native';
+import { Text, View, Animated, ActivityIndicator, TouchableOpacity } from 'react-native';
 
 import { moonCodes } from '../utils/moonCodes';
 import { startMoonAnimation } from '../utils/animation/moonAnimation';
@@ -16,6 +15,7 @@ import { styles } from '../style/Home';
 
 // importing API instance
 import { qweatherAPI } from '../services/api';
+import Box from '../components/Box';
 
 // Q WEATHER environment KEY
 const { Q_WEATHER_KEY } = process.env;
@@ -72,15 +72,20 @@ export default function Home({ onLayout }) {
       await qweatherAPI.get(URL_Parameters).then(function (response) {
 
         const daily = response.data.daily[0];
+        const date = daily.fxDate.split('-');
         const weatherData = {
-          date: daily.fxDate,
+          date: {
+            day: date[2],
+            month: date[1],
+            year: date[0],
+          },
           textDay: daily.textDay,
           textNight: daily.textNight
         }
         
         setWeatherInfo(weatherData);
 
-        setMoonPhaseName(daily.moonPhase);
+        setMoonPhaseName(daily.moonPhase.split('ou')[0]);
 
         setMoonPhaseIconCode(String(daily.moonPhaseIcon));
   
@@ -108,7 +113,6 @@ export default function Home({ onLayout }) {
   else {
     return (
       <View style={styles.container} onLayout={onLayout}>
-        <StatusBar style="auto" />
 
         { 
           (!moonPhaseIconCode) ?
@@ -124,18 +128,6 @@ export default function Home({ onLayout }) {
 
             // q qeather info
             <>
-              {/* <Text style={[styles.base_text, styles.subtitle]}>
-                Data: {weatherInfo.date}
-              </Text>
-
-              <Text style={[styles.base_text, styles.subtitle]}>
-                Previsão do tempo:
-              </Text>
-
-              <Text style={[styles.base_text, styles.subtitle]}>
-              Dia: {weatherInfo.textDay}, Noite: {weatherInfo.textNight}
-              </Text> */}
-
               <View>
                 <Animated.Image source={moonCodes[moonPhaseIconCode]} style={[styles.logo,
                 { bottom: moonBottom }]} />
@@ -145,16 +137,26 @@ export default function Home({ onLayout }) {
                 {moonPhaseName}
               </Text>
 
-              <View style={styles.box}>
-                  
-              </View>
+              <Text style={[styles.base_text, styles.subtitle]}>
+                {weatherInfo.date.day}/{weatherInfo.date.month}/{weatherInfo.date.year}
+              </Text>
 
-              {/* <BlurView
-        style={styles.absolute}
-        blurType="light"
-        blurAmount={10}
-        reducedTransparencyFallbackColor="white"
-      /> */}
+              <Box 
+                title="Hora" 
+                subtext={`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, "0")} h`} 
+              />
+
+              <TouchableOpacity style={[styles.box, styles.box_prev]}>
+                <Text style={[styles.box_text_base, styles.box_text_title, { alignSelf: 'center' }]}>Previsão</Text>
+                <View style={styles.box_subsection}>
+                  <Text style={[styles.box_text_base, styles.box_text_title]}>Dia</Text>
+                  <Text style={[styles.box_text_base, styles.box_text_subtext]}>{weatherInfo.textDay}</Text>
+                </View>
+                <View style={styles.box_subsection}>
+                  <Text style={[styles.box_text_base, styles.box_text_title]}>Noite</Text>
+                  <Text style={[styles.box_text_base, styles.box_text_subtext]}>{weatherInfo.textNight}</Text>
+                </View>
+              </TouchableOpacity>
           </>
       }
 

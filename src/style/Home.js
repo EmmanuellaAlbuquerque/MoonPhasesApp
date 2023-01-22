@@ -9,7 +9,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: '#0B0517',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -36,23 +36,59 @@ export const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 30, 
-    marginTop: 30, 
+    fontSize: 35, 
+    marginTop: 20, 
   },
 
   subtitle: {
-    fontSize: 12, 
+    fontSize: 20,
+    fontFamily: 'Inter_100Thin',
+    marginBottom: 20
   },
 
   box: {
-    backgroundColor: 'white',
-    width: '80%',
-    height: 50,
-    borderRadius: 8,
+    width: '90%',
 
+    borderWidth: 1,
+    borderRadius: 8,
     backgroundColor: 'rgba( 255, 255, 255, 0.25 )',
     borderStyle: 'solid',
-    borderColor: 'rgba( 255, 255, 255, 0.18 )',
-    borderWidth: 1
+    borderColor: 'rgba( 255, 255, 255, 0.40 )',
+
+    paddingHorizontal: 15
+  },
+
+  box_hour: {
+    height: 70,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  box_prev: {
+    width: '90%',
+    paddingVertical: 15,
+    marginTop: 15
+  },
+
+  box_subsection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 15,
+  },
+
+  box_text_base: {
+    color: '#fff',
+    fontSize: 20,
+  },
+
+  box_text_title: {
+    fontFamily: 'Inter_700Bold',
+    fontSize: 20
+  },
+
+  box_text_subtext: {
+    fontFamily: 'Inter_400Regular'
   }
 });
