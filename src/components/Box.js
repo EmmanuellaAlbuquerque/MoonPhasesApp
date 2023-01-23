@@ -1,3 +1,9 @@
+/**
+* Box without header title component
+* Created by Emmanuella Albuquerque on 2023/01/22.
+*/
+
+// importing libraries
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function Box ({ title, subtext }) {

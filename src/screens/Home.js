@@ -6,8 +6,7 @@
 // importing libraries
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
-import { BlurView, VibrancyView } from "@react-native-community/blur";
-import { Text, View, Animated, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { Text, View, Animated, ActivityIndicator } from 'react-native';
 
 import { moonCodes } from '../utils/moonCodes';
 import { startMoonAnimation } from '../utils/animation/moonAnimation';
@@ -16,6 +15,7 @@ import { styles } from '../style/Home';
 // importing API instance
 import { qweatherAPI } from '../services/api';
 import Box from '../components/Box';
+import BoxTitle from '../components/BoxTitle';
 
 // Q WEATHER environment KEY
 const { Q_WEATHER_KEY } = process.env;
@@ -26,6 +26,7 @@ export default function Home({ onLayout }) {
   const [moonPhaseIconCode, setMoonPhaseIconCode] = useState();
   const [moonBottom, setMoonBottom] = useState(new Animated.Value(0));
   const [weatherInfo, setWeatherInfo] = useState({});
+  const [hour, setHour] = useState();
 
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -56,6 +57,11 @@ export default function Home({ onLayout }) {
     }
 
     getGeolocation();
+
+    setInterval(() => {
+      setHour(`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, "0")} h`);
+    }, 1000);
+      
   }, []);
 
   // Executed when latitude, longitude change
@@ -143,20 +149,16 @@ export default function Home({ onLayout }) {
 
               <Box 
                 title="Hora" 
-                subtext={`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, "0")} h`} 
+                subtext={hour} 
               />
 
-              <TouchableOpacity style={[styles.box, styles.box_prev]}>
-                <Text style={[styles.box_text_base, styles.box_text_title, { alignSelf: 'center' }]}>Previsão</Text>
-                <View style={styles.box_subsection}>
-                  <Text style={[styles.box_text_base, styles.box_text_title]}>Dia</Text>
-                  <Text style={[styles.box_text_base, styles.box_text_subtext]}>{weatherInfo.textDay}</Text>
-                </View>
-                <View style={styles.box_subsection}>
-                  <Text style={[styles.box_text_base, styles.box_text_title]}>Noite</Text>
-                  <Text style={[styles.box_text_base, styles.box_text_subtext]}>{weatherInfo.textNight}</Text>
-                </View>
-              </TouchableOpacity>
+              <BoxTitle 
+                title="Previsão"
+                aboveTile="Dia"
+                descriptionAboveTile={weatherInfo.textDay}
+                belowTile="Noite"
+                descriptionBelowTile={weatherInfo.textNight}
+              />
           </>
       }
 
