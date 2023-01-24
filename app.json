@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#082633"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,12 +23,20 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#082633"
       },
       "package": "com.manu_czz.MoonPhasesApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#0B0517"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "726bbfa4-be71-4441-8978-6341a3093dfb"
+      }
     }
   }
 }

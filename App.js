@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar style="light"  />
+      <StatusBar style="light" />
       <Home onLayout={fontsLoadedCallback} />
     </View>
   )
