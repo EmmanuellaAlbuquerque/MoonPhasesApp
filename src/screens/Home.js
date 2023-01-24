@@ -6,7 +6,7 @@
 // importing libraries
 import { useEffect, useState } from 'react';
 import * as Location from 'expo-location';
-import { Text, View, Animated, ActivityIndicator } from 'react-native';
+import { Text, View, Animated, ActivityIndicator, Alert } from 'react-native';
 
 import { moonCodes } from '../utils/moonCodes';
 import { startMoonAnimation } from '../utils/animation/moonAnimation';
@@ -47,6 +47,10 @@ export default function Home({ onLayout }) {
       if (status !== 'granted') {
         setErrorMsg('Permission to access location was denied!');
         return;
+      }
+
+      if (!Q_WEATHER_KEY) {
+        Alert.alert("API KEY não definida!");
       }
 
       // sets location information
