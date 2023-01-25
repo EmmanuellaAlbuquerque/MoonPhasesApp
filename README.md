@@ -36,6 +36,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React-Native](https://reactnative.dev/)
 - [Expo](https://expo.dev/)
+- [API Q Weather](https://dev.qweather.com/en/docs/api/weather/weather-now/)
 
 ## :rocket: Executando o projeto
 
@@ -63,6 +64,12 @@ eas secret:push --scope project --env-file .env
 # Build for Android Emulator/device
 eas build -p android --profile preview
 ```
+
+## :link: Links
+
+código dos ícones utilizado para referenciar as imagens das fases da lua correspondente:
+
+- [Moon phase icons](https://dev.qweather.com/en/docs/resource/icons/#moon-phase-icons)
 
 ## :memo: Licença
 
