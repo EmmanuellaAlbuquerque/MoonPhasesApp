@@ -6,9 +6,11 @@
 
 <!-- Shields -->
 <div align="center">
-  <img src="https://img.shields.io/github/languages/top/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="top language">
-  <img src="https://img.shields.io/github/repo-size/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="repo size">
-  <a href="https://github.com/EmmanuellaAlbuquerque/MoonPhasesApp/blob/master/LICENSE">
+  <!--<img src="https://img.shields.io/github/languages/top/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="top language">-->
+  <!--<img src="https://img.shields.io/github/languages/count/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="count language">-->
+  <!--<img src="https://img.shields.io/github/repo-size/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="repo size">-->
+  <img src="https://img.shields.io/github/languages/code-size/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="code size">
+  <a href="https://github.com/EmmanuellaAlbuquerque/MoonPhasesApp/blob/main/LICENSE">
   <img src="https://img.shields.io/github/license/emmanuellaalbuquerque/MoonPhasesApp?color=9cf" alt="MIT License">
   </a> 
 </div>
@@ -25,7 +27,7 @@
 
 |Splash Screen|Loading Screen|App Screen|Permission Screen|
 |:---:|:---:|:---:|:---:|
-|<div style="width:250px">![myImage](.github/tela1splash.jpg)</div>| <div style="width:250px">![myImage](.github/tela2loading.jpg)</div>| <div style="width:250px">![myImage](.github/tela3app.jpg)</div>| <div style="width:250px">![myImage](.github/tela4permission.jpg)</div> 
+|![myImage](.github/tela1splash.jpg)|![myImage](.github/tela2loading.jpg)</div>|![myImage](.github/tela3app.jpg)|![myImage](.github/tela4permission.jpg)|
 
 ## :mag_right: Sobre
 
@@ -67,7 +69,7 @@ eas build -p android --profile preview
 
 ## :link: Links
 
-código dos ícones utilizado para referenciar as imagens das fases da lua correspondente:
+Código dos ícones utilizado para referenciar as imagens das fases da lua correspondentes:
 
 - [Moon phase icons](https://dev.qweather.com/en/docs/resource/icons/#moon-phase-icons)
 
@@ -77,19 +79,9 @@ Esse projeto está sob a licença do MIT. Veja o arquivo [LICENSE](LICENSE) para
 
 ## ✍️ Autor
 
----
+<a href="https://github.com/EmmanuellaAlbuquerque">
+  <img style="border-radius: 50%;" src="https://avatars1.githubusercontent.com/u/57198678?s=460&u=18118f08f358d2615421a0694cc00b1c10b8bba0&v=4" width="100px;" alt="eu"/>
+</a>
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-  <a 
-  style="display: flex; flex-direction: column; justify-content: center; align-items: center; color: #333;"
-    href="https://github.com/EmmanuellaAlbuquerque">
-    <img style="border-radius: 50%;" src="https://avatars1.githubusercontent.com/u/57198678?s=460&u=18118f08f358d2615421a0694cc00b1c10b8bba0&v=4" width="100px;" alt="eu"/>
-    <br />
-    <sub>
-      <b style="color: #333;">
-        Emmanuella Albuquerque
-      </b>
-    </sub>
-  </a>
-  Made with ❤️ by Manu
-</div>
+
+Made with ❤️ by <a href="https://github.com/EmmanuellaAlbuquerque">Manu</a>
