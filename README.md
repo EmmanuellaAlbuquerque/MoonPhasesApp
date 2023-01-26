@@ -11,7 +11,7 @@
   <!--<img src="https://img.shields.io/github/repo-size/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="repo size">-->
   <img src="https://img.shields.io/github/languages/code-size/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="code size">
   <a href="https://github.com/EmmanuellaAlbuquerque/MoonPhasesApp/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/emmanuellaalbuquerque/MoonPhasesApp?color=9cf" alt="MIT License">
+  <img src="https://img.shields.io/github/license/EmmanuellaAlbuquerque/MoonPhasesApp?color=9cf" alt="MIT License">
   </a> 
 </div>
 
